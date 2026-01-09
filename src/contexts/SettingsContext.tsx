@@ -82,7 +82,7 @@ const STORAGE_KEY = 'crm_settings';
 const defaultProducts: Product[] = [
   { id: '1', name: 'Plano Starter', defaultValue: 197, description: 'Plano básico ideal para pequenos negócios começando com automação', active: true, clientsUsing: 0, createdAt: new Date() },
   { id: '2', name: 'Plano PRO', defaultValue: 397, description: 'Plano completo com recursos avançados de IA e automação', active: true, clientsUsing: 0, createdAt: new Date() },
-  { id: '3', name: 'CompanyChat', defaultValue: 297, description: 'Solução de chat inteligente com IA para atendimento ao cliente', active: true, clientsUsing: 0, createdAt: new Date() },
+  { id: '3', name: 'Plano Avançado', defaultValue: 297, description: 'Solução completa com IA para atendimento ao cliente', active: true, clientsUsing: 0, createdAt: new Date() },
   { id: '4', name: 'Personalizado', defaultValue: 0, description: 'Plano customizado de acordo com as necessidades específicas do cliente', active: true, clientsUsing: 0, createdAt: new Date() },
 ];
 
@@ -108,9 +108,9 @@ const defaultPaymentMethods: PaymentMethodSetting[] = [
 ];
 
 const defaultCompanyInfo: CompanyInfo = {
-  name: 'CompanyChat IA',
+  name: 'Gestão Clientes7',
   cnpj: '',
-  email: 'contato@companychat.com.br',
+  email: 'contato@gestaoclientes7.com.br',
   phone: '',
   address: '',
   logo: '',

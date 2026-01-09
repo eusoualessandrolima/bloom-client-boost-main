@@ -1,4 +1,4 @@
-# Bloom CRM - Sistema de Gestão de Clientes
+# Gestão Clientes7 - Sistema de Gestão de Clientes
 
 Sistema CRM moderno integrado com Supabase para autenticação e banco de dados.
 

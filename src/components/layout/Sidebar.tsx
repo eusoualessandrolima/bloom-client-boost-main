@@ -58,7 +58,7 @@ export function Sidebar() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <MessageSquare className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="text-lg font-bold text-foreground">CompanyChat</span>
+              <span className="text-lg font-bold text-foreground">Gestão Clientes7</span>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ export function Sidebar() {
           <nav className="flex-1 overflow-y-auto scrollbar-thin p-4">
             <div className="space-y-1">
               {mainNavItems.map(item => {
-                const isActive = location.pathname === item.path || 
+                const isActive = location.pathname === item.path ||
                   (item.path === '/dashboard' && location.pathname === '/');
                 return (
                   <Link

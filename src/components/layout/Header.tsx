@@ -37,7 +37,7 @@ export function Header({ activeView, onViewChange, searchQuery, onSearchChange }
         <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
           {/* Left section */}
           <div className="flex items-center gap-4">
-            <h1 className="text-lg font-semibold text-foreground">CompanyChat CRM</h1>
+            <h1 className="text-lg font-semibold text-foreground">Gestão Clientes7</h1>
 
             {/* View tabs */}
             <div className="hidden sm:flex items-center gap-1 bg-muted rounded-lg p-1">
@@ -93,8 +93,8 @@ export function Header({ activeView, onViewChange, searchQuery, onSearchChange }
               <span className="hidden sm:inline">Automatizar</span>
             </Button>
 
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
               onClick={() => setNewClientModalOpen(true)}
             >
@@ -138,9 +138,9 @@ export function Header({ activeView, onViewChange, searchQuery, onSearchChange }
         </div>
       </header>
 
-      <NewClientModal 
-        open={newClientModalOpen} 
-        onClose={() => setNewClientModalOpen(false)} 
+      <NewClientModal
+        open={newClientModalOpen}
+        onClose={() => setNewClientModalOpen(false)}
       />
     </>
   );
