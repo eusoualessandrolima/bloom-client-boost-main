@@ -1,0 +1,205 @@
+@tailwind base;
+
+/* Shake animation for login */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Dark premium theme */
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 156 100% 50%;
+    --primary-foreground: 222 47% 7%;
+
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 222 30% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 340 82% 71%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 156 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Status colors */
+    --status-active: 156 100% 50%;
+    --status-overdue: 28 100% 63%;
+    --status-inactive: 220 9% 46%;
+    --status-cancelled: 340 100% 71%;
+
+    /* Custom shadows */
+    --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 8px 32px -4px rgba(0, 0, 0, 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 40% 85%;
+    --sidebar-primary: 156 100% 50%;
+    --sidebar-primary-foreground: 222 47% 7%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 15%;
+    --sidebar-ring: 156 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Card variants */
+  .card-metric {
+    @apply bg-card text-card-foreground rounded-xl p-6 shadow-lg transition-all duration-200;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-metric:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Status badges */
+  .badge-active {
+    @apply bg-[hsl(var(--status-active))] text-[hsl(var(--background))] font-semibold;
+  }
+
+  .badge-overdue {
+    @apply bg-[hsl(var(--status-overdue))] text-[hsl(var(--background))] font-semibold;
+  }
+
+  .badge-inactive {
+    @apply bg-[hsl(var(--status-inactive))] text-white font-semibold;
+  }
+
+  .badge-cancelled {
+    @apply bg-[hsl(var(--status-cancelled))] text-white font-semibold;
+  }
+
+  /* Kanban column headers */
+  .kanban-header-active {
+    @apply border-l-4 border-[hsl(var(--status-active))];
+  }
+
+  .kanban-header-overdue {
+    @apply border-l-4 border-[hsl(var(--status-overdue))];
+  }
+
+  .kanban-header-inactive {
+    @apply border-l-4 border-[hsl(var(--status-inactive))];
+  }
+
+  .kanban-header-cancelled {
+    @apply border-l-4 border-[hsl(var(--status-cancelled))];
+  }
+
+  /* Sidebar navigation */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150;
+    @apply text-muted-foreground hover:text-foreground hover:bg-accent;
+  }
+
+  .nav-item-active {
+    @apply bg-accent text-foreground;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(180,100%,50%)] bg-clip-text text-transparent;
+  }
+
+  /* Glow effect */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.3s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
